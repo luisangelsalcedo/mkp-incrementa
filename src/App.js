@@ -1,15 +1,22 @@
-import React, { Component } from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
 
-class App extends Component {
-  render() {
-    return (
-      <div>
-        <span className="value">0</span>
-        <button id="inc">Incrementa</button>
-      </div>
-    );
-  }
-}
+import { useState } from "react";
+import "./App.css";
+
+const App = () => {
+  const [contador, setContador] = useState(0);
+  const aumentar = num => {
+    setContador(num);
+  };
+  return (
+    <div>
+      <span className="value">{contador}</span>
+      <button id="inc" onClick={() => aumentar(contador + 1)}>
+        Incrementa
+      </button>
+    </div>
+  );
+};
 
 export default App;
